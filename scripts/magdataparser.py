@@ -3,7 +3,9 @@
 ### Date June 21, 2026
 ### Parses raw mag data into a PostgreSQL db
 
-# import pandas as pd, sqlalchemy
+import pandas as pd 
+import sqlalchemy
+# import psycopg2
 
 header = None
 current_line_id = None
@@ -30,8 +32,22 @@ for line in fd:
         data_rows.append(row_dict)
 
 
-# 2 Parse file into PD dataframe?
-# df = pd.DataFrame(data_rows)
+# 2 Parse file into PD dataframe
+df = pd.DataFrame(data_rows)
+# ['Easting', 'Northing', 'elevation', 'nT', 'sq', cor-nT', 'sat', 'position-type','time', 'picket-x', picket-y']
 
+df["Easting"] = pd.to_numeric(df["Easting"])
+df["Northing"] = pd.to_numeric(df["Northing"])
+df["elevation"] = pd.to_numeric(df["elevation"])
+df["nT"] = pd.to_numeric(df["nT"])
+df["sq"] = pd.to_numeric(df["sq"])
+df["cor-nT"] = pd.to_numeric(df["cor-nT"])
+# df["position-type"] = pd.to_numeric(df["position-type"])
+
+# df["time"] = pd.to_datetime(df["time"])
+df["picket-x"] = pd.to_numeric(df["picket-x"], errors="coerce")
+df["picket-y"] = pd.to_numeric(df["picket-y"], errors="coerce")
+
+print(df.head(10))
 # 3 Create Postgres DB and insert data into?
 
