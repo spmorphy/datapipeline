@@ -31,6 +31,7 @@ for line in fd:
         row_dict["line_id"] = current_line_id
         data_rows.append(row_dict)
 
+fd.close()
 
 # 2 Parse file into PD dataframe
 df = pd.DataFrame(data_rows)
