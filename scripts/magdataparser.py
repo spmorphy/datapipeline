@@ -4,7 +4,7 @@
 ### Parses raw mag data into a PostgreSQL db
 
 import pandas as pd 
-import sqlalchemy
+import sqlalchemy import create_engine
 # import psycopg2
 
 header = None
@@ -49,5 +49,8 @@ df["picket-x"] = pd.to_numeric(df["picket-x"], errors="coerce")
 df["picket-y"] = pd.to_numeric(df["picket-y"], errors="coerce")
 
 print(df.head(10))
-# 3 Create Postgres DB and insert data into?
 
+# 3 Create Postgres DB
+
+engine = create_engine("postgresql+psycopg2://username:password@localhost:5432/magdata")
+df.to_sql("survey_data", engine, if_exists="replace", index=False)
