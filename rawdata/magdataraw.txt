@@ -1,0 +1,17 @@
+/Gem Systems GSM-19-WV 2029042 v9.0 15 III 2022 M ewv+6flo@v9ob
+/ID 5 file 1 survey.wm 08 VI 26
+/UTC-04:00
+/18U
+/GPS datum WGS84
+/00000000 0001690A 89 227E
+/GPS version 2018/Aug/24
+/no AC filter
+/12.8V +31.75C
+/tune initialize Y auto-tune Y 0.55.2uT
+/115200bps
+/BL50 10 III 2023
+/Easting Northing elevation nT cot-nT sat position-type time picket-x picket-y
+/line 000099
+ 0699286.91  5758231.01  0792  55294.65 99  000000.00 08 S 104829.0  9  0
+ 0699286.49  5758230.76  0792  55294.09 99  000000.00 08 S 104830.0 * *
+ 0699286.55  5758230.76  0792  55295.11 99  000000.00 08 S 104831.0 * *
