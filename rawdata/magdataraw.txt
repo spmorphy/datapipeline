@@ -10,7 +10,7 @@
 /tune initialize Y auto-tune Y 0.55.2uT
 /115200bps
 /BL50 10 III 2023
-/Easting Northing elevation nT cot-nT sat position-type time picket-x picket-y
+/Easting Northing elevation nT cor-nT sat position-type time picket-x picket-y
 /line 000099
  0699286.91  5758231.01  0792  55294.65 99  000000.00 08 S 104829.0  9  0
  0699286.49  5758230.76  0792  55294.09 99  000000.00 08 S 104830.0 * *
