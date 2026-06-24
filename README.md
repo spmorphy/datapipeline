@@ -1,7 +1,7 @@
 # datapipeline
 Built this repo as a learning project to understand/implement converting raw data sources into SQL databases.
 
-### Places to start:
+### Overview Work Schedule:
 1. Collect raw data types into dir /rawdata/
 2. Build workflows/scripts inserting into POSTgres DB's
 3. DB visualization tools? (GUI's)
@@ -9,17 +9,17 @@ Built this repo as a learning project to understand/implement converting raw dat
 5. EXTRA: (host DB in Docker container, w/ persistent storage: eventually self hosted with Kubernetes deployment.
 
 ### Data Sources
-
 1. Geological Data: can pull from public GOV sites (USGS etc.)
 2. Free Public API's (https://www.freepublicapis.com/)
 3. NASA data (https://data.nasa.gov/organization/nasa)
-4. Live Buoy data (Surf report) 
+4. Live Buoy data (Surf report)
 
 
 ### Workflow
-
-1. From a raw data file
-    1. Create a new postgreSQL db 
-    2. Check if duplicates and insert new values into postgreSQL db
-    3. Delete postgreSQL db
-
+1. Raw data file
+2. Python script
+    1. Parse data
+    2. Convert into PANDAS dataframe
+    3. Insert into postgreSQL DB using SQalcehmy
+3. Dockerfile:
+    1. Create SQL database ->> work here.
