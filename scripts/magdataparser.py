@@ -3,7 +3,7 @@
 ### Date June 21, 2026
 ### Parses raw mag data into a PostgreSQL db
 
-import pandas as pd 
+import pandas as pd
 import sqlalchemy import create_engine
 # import psycopg2
 
@@ -12,17 +12,18 @@ current_line_id = None
 data_rows = []
 metadata_lines = []
 
+# parse data
 fd = open("../rawdata/magdataraw.txt", "r")
 for line in fd:
     # header
     if line[0] == "/" and line[1] == "E":
         header = line.lstrip("/").split()
-    
+
     #line id
     if line[0] == "/" and line[1] == "l":
         full_line = line.lstrip("/").split()
         current_line_id = full_line[1]
-   
+
    #data line
     if line[0] != "/":
         #data line
@@ -33,7 +34,7 @@ for line in fd:
 
 fd.close()
 
-# 2 Parse file into PD dataframe
+# PD dataframe
 df = pd.DataFrame(data_rows)
 # ['Easting', 'Northing', 'elevation', 'nT', 'sq', cor-nT', 'sat', 'position-type','time', 'picket-x', picket-y']
 
